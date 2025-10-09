@@ -40,7 +40,7 @@ export function OgWhatsapp({
             </p>
 
         </div>
-        <div className="absolute right-2 bottom-0 flex items-center gap-1">
+        <div className="absolute right-1 bottom-0 flex items-center gap-1">
                 <span className="text-[11px] text-[#8a9d96] font-[560]">{ new Date().toLocaleString( "en-US", { hour: "2-digit", minute: "2-digit" } ) }</span>
                 <CheckCheck className="w-4 h-4 text-[#8a9d96]" />
             </div>
@@ -49,6 +49,11 @@ export function OgWhatsapp({
   );
 }
 
+/**
+ * OgWhatsappSkeleton
+ * @param theme - The theme of the skeleton
+ * @returns The OgWhatsappSkeleton component
+ */
 export function OgWhatsappSkeleton({
   theme = "light",
 }: {
@@ -68,7 +73,7 @@ export function OgWhatsappSkeleton({
             </p>
 
         </div>
-        <div className="absolute right-2 bottom-0 flex items-center gap-1">
+        <div className="absolute right-1 bottom-0 flex items-center gap-1">
                 <span className="text-[11px] text-[#8a9d96] font-[560]">{ new Date().toLocaleString( "en-US", { hour: "2-digit", minute: "2-digit" } ) }</span>
                 <CheckCheck className="w-4 h-4 text-[#8a9d96]" />
             </div>

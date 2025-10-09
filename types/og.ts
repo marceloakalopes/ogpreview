@@ -6,7 +6,7 @@
  * @property {string} image - The image of the OG Preview
  * @property {string} link - The link of the OG Preview
  */
-export type OG = {
+export interface OG {
   name: string;
   title: string;
   description: string;
@@ -15,4 +15,5 @@ export type OG = {
   link: string;
   type?: "website" | "article" | "profile";
   social?: "twitter" | "facebook" | "linkedin" | "instagram" | "youtube" | "tiktok" | "pinterest" | "reddit" | "snapchat" | "twitch" | "discord" | "telegram" | "whatsapp" | "email" | "sms" | "other";
+  color?: string;
 }

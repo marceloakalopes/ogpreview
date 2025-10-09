@@ -2,6 +2,7 @@ import { OG } from "@/types/og";
 import Link from "next/link";
 import Image from "next/image";
 import { cleanUrl } from "@/utils/url";
+import { truncateText } from "@/utils/text";
 
 /**
  * OgInstagram
@@ -21,7 +22,7 @@ export function OgInstagram({ og }: { og: OG }) {
         />
         <div className="flex flex-col py-2 px-3 gap-1.5 bg-[#25292f] rounded-b-2xl">
           <h3 className="text-white text-sm font-bold">
-            {og.title} | {og.name}
+            { truncateText(og.title, 50) } | {og.name}
           </h3>
           <div className="flex items-center gap-1">
             <svg
@@ -52,23 +53,23 @@ export function OgInstagram({ og }: { og: OG }) {
                 d="M248 64C146.39 64 64 146.39 64 248s82.39 184 184 184 184-82.39 184-184S349.61 64 248 64z"
                 fill="none"
                 stroke="white"
-                stroke-miterlimit="10"
-                stroke-width="32"
+                strokeMiterlimit="10"
+                strokeWidth="32"
               />
               <path
                 fill="none"
                 stroke="white"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="32"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="32"
                 d="M220 220h32v116"
               />
               <path
                 fill="none"
                 stroke="white"
-                stroke-linecap="round"
-                stroke-miterlimit="10"
-                stroke-width="32"
+                strokeLinecap="round"
+                strokeMiterlimit="10"
+                strokeWidth="32"
                 d="M208 340h88"
               />
               <path
@@ -87,9 +88,9 @@ export function OgInstagram({ og }: { og: OG }) {
               height="15px"
               fill="none"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="42"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="42"
               className="pr-[1px]"
             >
               <path d="M53.12 199.94l400-151.39a8 8 0 0110.33 10.33l-151.39 400a8 8 0 01-15-.34l-67.4-166.09a16 16 0 00-10.11-10.11L53.46 215a8 8 0 01-.34-15.06zM460 52L227 285" />
@@ -140,23 +141,23 @@ export function OgInstagramSkeleton() {
                 d="M248 64C146.39 64 64 146.39 64 248s82.39 184 184 184 184-82.39 184-184S349.61 64 248 64z"
                 fill="none"
                 stroke="white"
-                stroke-miterlimit="10"
-                stroke-width="32"
+                strokeMiterlimit="10"
+                strokeWidth="32"
               />
               <path
                 fill="none"
                 stroke="white"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="32"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="32"
                 d="M220 220h32v116"
               />
               <path
                 fill="none"
                 stroke="white"
-                stroke-linecap="round"
-                stroke-miterlimit="10"
-                stroke-width="32"
+                strokeLinecap="round"
+                strokeMiterlimit="10"
+                strokeWidth="32"
                 d="M208 340h88"
               />
               <path
@@ -175,9 +176,9 @@ export function OgInstagramSkeleton() {
               height="15px"
               fill="none"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="42"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="42"
               className="pr-[1px]"
             >
               <path d="M53.12 199.94l400-151.39a8 8 0 0110.33 10.33l-151.39 400a8 8 0 01-15-.34l-67.4-166.09a16 16 0 00-10.11-10.11L53.46 215a8 8 0 01-.34-15.06zM460 52L227 285" />

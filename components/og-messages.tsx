@@ -4,6 +4,7 @@ import { OG } from "@/types/og";
 import Image from "next/image";
 import Link from "next/link";
 import { cleanUrl } from "@/utils/url";
+import { truncateText } from "@/utils/text";
 
 /**
  * OgMessages
@@ -12,9 +13,15 @@ import { cleanUrl } from "@/utils/url";
  */
 export function OgMessages({
   og,
+  dominantColor,
+  textColor,
+  subTextColor,
   theme = "light",
 }: {
   og: OG;
+  dominantColor: { r: number, g: number, b: number };
+  textColor: "black" | "white";
+  subTextColor: string;
   theme?: "light" | "dark";
 }) {
   return (
@@ -28,13 +35,13 @@ export function OgMessages({
           className="rounded-t-2xl"
         />
         <div className="message-bubble">
-          <h3 className="text-black text-sm font-bold truncate">{og.title}</h3>
-          <p className="text-gray-600 font-[500] text-xs">{cleanUrl(og.link)}</p>
+          <h3 className={`text-${textColor} text-sm font-bold`}>{truncateText(og.title, 50)}</h3>
+          <p className={`text-${subTextColor} font-[500] text-xs`}>{cleanUrl(og.link)}</p>
         </div>
         <style jsx>{`
           .message-bubble {
             z-index: -1;
-            background-color: #c6c5c4;
+            background-color: ${dominantColor ? `rgb(${dominantColor.r}, ${dominantColor.g}, ${dominantColor.b})` : "#c6c5c4"};
             padding: 8px 12px;
             border-radius: 0 0 14px 14px;
             position: relative;
@@ -54,7 +61,7 @@ export function OgMessages({
             right: -5px;
             width: 16px;
             z-index: 1;
-            background-color: #c6c5c4;
+            background-color: ${dominantColor ? `rgb(${dominantColor.r}, ${dominantColor.g}, ${dominantColor.b})` : "#c6c5c4"};
             border-bottom-left-radius: 14px 12px;
           }
 
