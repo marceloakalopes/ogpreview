@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cleanUrl } from "@/utils/url";
 import { truncateText } from "@/utils/text";
+import { RGB } from "@/utils/colour";
 
 /**
  * OgMessages
@@ -21,7 +22,7 @@ export function OgMessages({
   og: OG;
   dominantColor: { r: number, g: number, b: number };
   textColor: "black" | "white";
-  subTextColor: string;
+  subTextColor: RGB;
   theme?: "light" | "dark";
 }) {
   return (
@@ -36,7 +37,7 @@ export function OgMessages({
         />
         <div className="message-bubble">
           <h3 className={`text-${textColor} text-sm font-bold`}>{truncateText(og.title, 50)}</h3>
-          <p className={`text-${subTextColor} font-[500] text-xs`}>{cleanUrl(og.link)}</p>
+          <p style={{ color: `rgb(${subTextColor.r}, ${subTextColor.g}, ${subTextColor.b})` }} className="font-[500] text-xs">{cleanUrl(og.link)}</p>
         </div>
         <style jsx>{`
           .message-bubble {
