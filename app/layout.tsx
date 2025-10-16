@@ -15,6 +15,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "OGpreview | Preview your OG images before deployment",
   description: "OGpreview.dev is a tool that helps you preview your OG images before deployment across various platforms.",
+  openGraph: {
+    title: "OGpreview | Preview your OG images before deployment", // keep it under 60 characters
+    description: "OGpreview.dev is a tool that helps you preview your OG images before deployment across various platforms.", // keep it under 160 characters
+    url: "https://ogpreview.dev",
+    type: "website",
+
+  }
 };
 
 export default function RootLayout({
